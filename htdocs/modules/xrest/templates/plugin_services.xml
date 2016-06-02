@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<{assign value="	" var="spacer"}>
+<definitions name="<{$plugin}>"
+
+<{$spacer}>targetNamespace="<{$xoops_url}><{$path}>/service"
+<{$spacer}><{$spacer}><{$spacer}> xmlns:tns="<{$xoops_url}><{$path}>/service"
+<{$spacer}><{$spacer}><{$spacer}> xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+<{$spacer}><{$spacer}><{$spacer}> xmlns:defs="<{$xoops_url}><{$path}>/definitions"
+<{$spacer}><{$spacer}><{$spacer}> xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<{$spacer}><import namespace="<{$xoops_url}><{$path}>/definitions"
+<{$spacer}><{$spacer}><{$spacer}>location="<{$xoops_url}><{$path}>/<{$plugin}>.wsdl"/>
+
+<{$spacer}><binding name="<{$plugin}>SoapBinding" type="tns:<{$plugin}>PortType">
+<{$spacer}><{$spacer}><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<{$spacer}><{$spacer}><operation name="<{$plugin}>">
+<{$spacer}><{$spacer}><{$spacer}><soap:operation soapAction="<{$xoops_url}><{$path}>"/>
+<{$spacer}><{$spacer}><{$spacer}><input>
+<{$spacer}><{$spacer}><{$spacer}><{$spacer}><soap:body use="literal"/>
+<{$spacer}><{$spacer}><{$spacer}></input>
+<{$spacer}><{$spacer}><{$spacer}><output>
+<{$spacer}><{$spacer}><{$spacer}><{$spacer}><soap:body use="literal"/>
+<{$spacer}><{$spacer}><{$spacer}></output>
+<{$spacer}><{$spacer}></operation>
+<{$spacer}></binding>
+
+<{$spacer}><service name="<{$plugin}>Service">
+<{$spacer}><{$spacer}><documentation><{$plugin_document}></documentation>
+<{$spacer}><{$spacer}><port name="<{$plugin}>Port" binding="tns:<{$plugin}>SoapBinding">
+<{$spacer}><{$spacer}><{$spacer}><soap:address location="<{$xoops_url}><{$path}>"/>
+<{$spacer}><{$spacer}></port>
+<{$spacer}></service>
+
+</definitions>

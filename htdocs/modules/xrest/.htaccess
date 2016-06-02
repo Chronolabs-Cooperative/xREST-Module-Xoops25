@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^images/(.*?)$ 											images/$1
+RewriteRule ^admin/(.*?)$ 											admin/$1
+RewriteRule ^([a-zA-Z0-9]+)/wsdl/([a-zA-Z0-9]+).([a-z]+)$			index.php?xrestplugin=$1&outputmode=wsdl&xrestpluginb=$3&parser=$4
+RewriteRule ^([a-zA-Z0-9]+)/([a-z]+)/$								index.php?xrestplugin=$1&outputmode=$2&$3
+RewriteRule ^([a-zA-Z0-9]+)/$										index.php?xrestplugin=$1&$2

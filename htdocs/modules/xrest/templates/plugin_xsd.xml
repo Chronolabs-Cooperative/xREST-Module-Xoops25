@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<{assign value="	" var="spacer"}>
+<schema targetNamespace="<{$xoops_url}><{$path}>/schemas"
+<{$spacer}><{$spacer}>xmlns="http://www.w3.org/2000/10/XMLSchema">
+<{includeq file="element_wsdl.xml" mode='Request' complex=$xsd.request tabs=1}>
+<{includeq file="element_wsdl.xml" mode='' complex=$xsd.response tabs=1}>
+</schema>

@@ -1,0 +1,14 @@
+<{assign value="	" var="spacer"}>
+<{"	"|str_repeat:$tabs}><element name="<{$plugin}>Request">
+<{"	"|str_repeat:$tabs}><{$spacer}><complexType>
+<{"	"|str_repeat:$tabs}><{$spacer}><{$spacer}><all>
+<{foreach from=$complex item=element}>
+<{if isset($element.items) && count($element.items) > 0 }>
+<{includeq file="complex_wsdl.xml" complex=$element.items tabs=$tabs+3}>
+<{else}>
+<{"	"|str_repeat:$tabs}><{$spacer}><{$spacer}><{$spacer}><element name="<{$element.name}>" type="<{$element.type}>"/>
+<{/if}>
+<{/foreach}>
+<{"	"|str_repeat:$tabs}><{$spacer}><{$spacer}></all>
+<{"	"|str_repeat:$tabs}><{$spacer}></complexType>
+<{"	"|str_repeat:$tabs}></element>

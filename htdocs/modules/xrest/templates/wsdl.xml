@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<{assign value="	" var="spacer"}>
+<definitions name="<{$plugin}>"
+
+<{$spacer}>targetNamespace="<{$xoops_url}><{$path}>/<{$plugin}>.wsdl"
+<{$spacer}><{$spacer}>xmlns:tns="<{$xoops_url}><{$path}>/<{$plugin}>.wsdl"
+<{$spacer}><{$spacer}>xmlns:xsd1="<{$xoops_url}><{$path}>/<{$plugin}>.xsd"
+<{$spacer}><{$spacer}>xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+<{$spacer}><{$spacer}>xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<{$spacer}><types>
+<{$spacer}><{$spacer}><schema targetNamespace="<{$xoops_url}><{$path}>/<{$plugin}>/schemas"
+<{$spacer}><{$spacer}><{$spacer}>xmlns="http://www.w3.org/2000/10/XMLSchema">
+<{includeq file="element_wsdl.xml" mode='Request' complex=$xsd.request tabs=3}>
+<{includeq file="element_wsdl.xml" mode='' complex=$xsd.response tabs=3}>
+<{$spacer}><{$spacer}>
+<{$spacer}><{$spacer}></schema>
+<{$spacer}></types>
+
+<{$spacer}><message name="<{$plugin}>Input">
+<{$spacer}><{$spacer}><part name="body" element="xsd1:<{$plugin}>Request"/>
+<{$spacer}></message>
+
+<{$spacer}><message name="<{$plugin}>Output">
+<{$spacer}><{$spacer}><part name="body" element="xsd1:<{$plugin}>"/>
+<{$spacer}></message>
+
+<{$spacer}><portType name="<{$plugin}>PortType">
+<{$spacer}><{$spacer}><operation name="<{$plugin}>">
+<{$spacer}><{$spacer}><{$spacer}><input message="tns:<{$plugin}>Input"/>
+<{$spacer}><{$spacer}><{$spacer}><output message="tns:<{$plugin}>Output"/>
+<{$spacer}><{$spacer}></operation>
+<{$spacer}></portType>
+
+<{$spacer}><binding name="<{$plugin}>SoapBinding" type="tns:<{$plugin}>PortType">
+<{$spacer}><{$spacer}><soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+<{$spacer}><{$spacer}><operation name="<{$plugin}>">
+<{$spacer}><{$spacer}><{$spacer}><soap:operation soapAction="<{$xoops_url}><{$path}>"/>
+<{$spacer}><{$spacer}><{$spacer}><input>
+<{$spacer}><{$spacer}><{$spacer}><{$spacer}><soap:body use="literal"/>
+<{$spacer}><{$spacer}><{$spacer}></input>
+<{$spacer}><{$spacer}><{$spacer}><output>
+<{$spacer}><{$spacer}><{$spacer}><{$spacer}><soap:body use="literal"/>
+<{$spacer}><{$spacer}><{$spacer}></output>
+<{$spacer}><{$spacer}></operation>
+<{$spacer}></binding>
+
+<{$spacer}><service name="<{$plugin}>Service">
+<{$spacer}><{$spacer}><documentation><{$plugin_document}></documentation>
+<{$spacer}><{$spacer}><port name="<{$plugin}>Port" binding="tns:<{$plugin}>SoapBinding">
+<{$spacer}><{$spacer}><{$spacer}><soap:address location="<{$xoops_url}><{$path}>"/>
+<{$spacer}><{$spacer}></port>
+<{$spacer}></service>
+
+</definitions>

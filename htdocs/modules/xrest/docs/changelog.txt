@@ -1,0 +1,48 @@
+========================================
+ 2013/03/03 17:12:23 Version 1.60 STABLE
+========================================
+ - Changed 	/class/plugin.php Testing of plugins with eval() removed (Wishcraft)
+ - Changed 	/class/plugin.php Extension testing added to getFileListAsArray() (Wishcraft)
+ - Changed 	/include/server.php Preloaders added to main service bootstrapping (Wishcraft)
+ - Changed 	/include/server.php Execution Mode added to support SOAP + WSDL (Wishcraft)
+ - Changed 	/include/server.php parse_url() & parse_str() added to variable scoop for accuracy (Wishcraft)
+ - Changed 	/plugin/tweet.php tweet_xsd() renamed to tweet_xsd_soap() & tweet_xsd_rest() (Wishcraft)
+ - Changed 	/plugin/tweet.php tweet_wsdl_documentation() added (Wishcraft)
+ - Added 	/xxxx/*.* Commenting added to main functional routines  (Wishcraft)
+ 
+
+========================================
+ 2012/01/09 07:01:00 Version 1.52 STABLE
+========================================
+ - Changed $GLOBALS['xoopsModule'] in module renamed to $GLOBALS['xrestModule'] /class/gateway, /class, /include, / (Wishcraft)
+ - Changed $GLOBALS['xoopsModuleConfig'] in module renamed to $GLOBALS['xrestModuleConfig']  /class/gateway, /class, /include, / (Wishcraft)
+ - Changed /admin/admin_header.php Instanciated Using Blue Room XOOPS 2.5 GUI  (Wishcraft)
+ - Changed /admin/index.php Instanciated Using Blue Room XOOPS 2.5 GUI & New Forms & Classes (Wishcraft)
+ - Changed /admin/permissions.php Instanciated Using Blue Room XOOPS 2.5 GUI & New Forms & Classes (Wishcraft)
+ - Changed /admin/menu.php Instanciated Using Blue Room XOOPS 2.5 GUI & New Forms & Classes (Wishcraft)
+ - Changed /include/server.php Instanciated Using Blue Room classes, Implemented Cache and Statistics  (Wishcraft)
+ - Changed /include/common.php Old Functions Removed  (Wishcraft)
+ - Changed /include/functions.php Old Functions Removed  (Wishcraft) 
+ - Changed /xoops_version.php 2 new preferences added for cache time and cleanup timing  (Wishcraft)
+ - Changed /language/english/modinfo.php Cleaned and new variables added for preferences (Wishcraft)
+ - Changed /language/english/main.php Cleaned and new variables added for options (Wishcraft)
+ - Changed /language/english/admin.php Cleaned and new variables added for options (Wishcraft)
+ - Added /language/english/forms.php Form language specified and removed from routines (Wishcraft)
+ - Added /include/forms.xrest.php Forms removed from core admin functions and added to this file as functions (Wishcraft)
+ - Added /class/fields.php Class modeller blue room class added for database xrest_fields (Wishcraft)
+ - Added /class/tables.php Class modeller blue room class added for database xrest_tables (Wishcraft)
+ - Added /class/plugins.php Class modeller blue room class added for database xrest_plugins (Wishcraft)
+ - Added 32x32 System Icons Added to the Frameworks Module Class (wishcraft)
+ - Added 16x16 System Icons Added to the Frameworks Module Class (wishcraft)
+ - Added More informative InfoBox on Dashboard index.php (wishcraft)
+ - Added GUI Admin for Xoops 2.5.x  (wishcraft)
+ - Added language/english/help folder  (wishcraft)
+ - Added language/english/help/help.html folder  (wishcraft)
+ - Added language/english/docs folder  (wishcraft)
+ - Added language/english/docs/changelog.txt folder  (wishcraft)
+ - Added language/english/docs/credits.txt folder  (wishcraft)
+ - Added language/english/docs/install.txt folder  (wishcraft)
+ - Added language/english/docs/lang_diff.txt folder  (wishcraft)
+ - Added language/english/docs/licence.txt folder  (wishcraft)
+ - Added language/english/docs/readme.txt folder  (wishcraft)
+ - Fixed Warnings & Notices (Requested by Mamba)  (Wishcraft)

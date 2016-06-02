@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<{assign value="	" var="spacer"}>
+<definitions name="<{$plugin}>"
+
+<{$spacer}>targetNamespace="<{$xoops_url}><{$path}>/definitions"
+<{$spacer}><{$spacer}>xmlns:tns="<{$xoops_url}><{$path}>/definitions"
+<{$spacer}><{$spacer}>xmlns:xsd1="<{$xoops_url}><{$path}>/schemas"
+<{$spacer}><{$spacer}>xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+<{$spacer}><{$spacer}>xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+<{$spacer}><import namespace="<{$xoops_url}><{$path}>/schemas"
+<{$spacer}><{$spacer}><{$spacer}>location="<{$xoops_url}><{$path}>/<{$plugin}>.xsd"/>
+
+<{$spacer}><message name="<{$plugin}>Input">
+<{$spacer}><{$spacer}><part name="body" element="xsd1:<{$plugin}>Request"/>
+<{$spacer}></message>
+
+<{$spacer}><message name="<{$plugin}>Output">
+<{$spacer}><{$spacer}><part name="body" element="xsd1:<{$plugin}>"/>
+<{$spacer}></message>
+
+<{$spacer}><portType name="<{$plugin}>PortType">
+<{$spacer}><{$spacer}><operation name="<{$plugin}>">
+<{$spacer}><{$spacer}><{$spacer}><input message="tns:<{$plugin}>Input"/>
+<{$spacer}><{$spacer}><{$spacer}><output message="tns:<{$plugin}>Output"/>
+<{$spacer}><{$spacer}></operation>
+<{$spacer}></portType>
+
+</definitions>
